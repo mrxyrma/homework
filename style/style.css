@@ -1,0 +1,175 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter', sans-serif;
+  box-sizing: border-box;
+}
+
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: minmax(360px, 460px) minmax(100px, 200px) minmax(65px, 165px) minmax(125px, 225px) minmax(135px, 235px);
+  grid-template-rows: 288px 185px 250px;
+  grid-auto-rows: 250px;
+  grid-template-areas:
+    'main girl-in-a-hat girl-in-a-hat laughing-girl girl-with-flowers'
+    'main girl-in-a-hat girl-in-a-hat doors empty-block_red'
+    'text-block cup-of-coffee empty-block_brown doors man';
+}
+
+.main-block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #f9f9f9;
+  grid-area: main;
+  width: 100%;
+  padding: 125px 0 48px;
+}
+
+.main-block__title {
+  text-transform: uppercase;
+  font-size: 64px;
+  font-weight: 600;
+  line-height: 1.1;
+}
+
+.icons {
+  display: grid;
+  grid-template-columns: 23px 23px 29px;
+  grid-template-rows: 23px;
+  column-gap: 24px;
+}
+
+.icons__item {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.icons__item:hover {
+  cursor: pointer;
+  opacity: 0.7;
+}
+
+.text-block {
+  background-color: #828282;
+  grid-area: text-block;
+}
+
+.text-block__paragraph {
+  font-size: 18px;
+  color: #f2f2f2;
+  line-height: 22px;
+  font-weight: 300;
+  margin: 95px 48px 64px 65px;
+}
+
+.man {
+  grid-area: man;
+}
+
+.doors {
+  grid-area: doors;
+}
+
+.cup-of-coffee {
+  grid-area: cup-of-coffee;
+}
+
+.girl-with-flowers {
+  grid-area: girl-with-flowers;
+}
+
+.laughing-girl {
+  grid-area: laughing-girl;
+}
+
+.girl-in-a-hat {
+  grid-area: girl-in-a-hat;
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  vertical-align: bottom;
+}
+
+.empty-block_red {
+  background-color: #a61c1c;
+  min-height: 150px;
+  grid-area: empty-block_red;
+}
+
+.empty-block_brown {
+  background-color: #a6806b;
+  min-height: 150px;
+  grid-area: empty-block_brown;
+}
+
+@media screen and (max-width: 900px) {
+  .container {
+    grid-template-columns: minmax(360px, 460px) minmax(100px, 200px) minmax(65px, 165px) minmax(125px, 225px);
+    grid-template-areas:
+      'main girl-in-a-hat girl-in-a-hat laughing-girl '
+      'main girl-in-a-hat girl-in-a-hat empty-block_red'
+      'text-block cup-of-coffee empty-block_brown man'
+      'doors girl-with-flowers . .';
+  }
+
+  .text-block {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15px 30px;
+  }
+
+  .text-block__paragraph {
+    margin: 0;
+  }
+}
+
+@media screen and (max-width: 780px) {
+  .container {
+    grid-template-columns: minmax(350px, 460px) minmax(100px, 200px) minmax(65px, 165px);
+    grid-template-rows: 230px 150px 200px;
+    /* grid-auto-rows: 350px; */
+    grid-template-areas:
+      'main laughing-girl man'
+      'main empty-block_brown empty-block_red'
+      'text-block cup-of-coffee girl-with-flowers'
+      'girl-in-a-hat doors doors';
+  }
+
+  .main-block {
+    padding-top: 48px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .main-block__title {
+    font-size: 48px;
+  }
+
+  .icons {
+    margin-top: 100px;
+  }
+
+  .text-block__paragraph {
+    font-size: 14px;
+  }
+
+  .image {
+    width: 100vw;
+    max-height: 350px;
+  }
+}
